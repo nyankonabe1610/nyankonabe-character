@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url("fonts/MPLUSRounded1c-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "M PLUS Rounded 1c";
+    src: url("fonts/MPLUSRounded1c-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #eeeeee;
+    color: #333333;
+    font-family: "M PLUS Rounded 1c", sans-serif;
+
+}
+
+
+/* ページ全体 */
+.page {
+    width: min(1000px, calc(100% - 30px));
+    margin: 15px auto;
+    padding: 10px 15px 30px;
+    background-color: white;
+    box-shadow: 0 0 5px #cccccc;
+}
+
+
+/* タイトル */
+h1 {
+    margin: 0 0 35px 0;
+    padding: 5px;
+    font-size: 28px;
+    color: #ff4433;
+
+    background: linear-gradient(
+        to right,
+        #fff5d8,
+        white
+    );
+}
+
+
+/* キャラクター1人分 */
+.character {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+
+/* 画像と説明文を左右反転 */
+.character.reverse {
+    flex-direction: row-reverse;
+}
+
+
+/* キャラクター画像 */
+.character-image {
+    width: 35%;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.character-image img {
+    width: 72%;
+    max-width: 380px;
+    max-height: 430px;
+    object-fit: contain;
+}
+
+.character-text {
+    width: 65%;
+    padding: 0 10px;
+}
+
+
+/* キャラクター名 */
+.character-text h2 {
+    margin: 0 0 12px 0;
+    padding-left: 10px;
+
+    border-left: 5px solid #222222;
+
+    font-size: 28px;
+    color: #111111;
+}
+
+
+/* キャラクター説明 */
+.character-text p {
+    margin: 0;
+
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   スマホ用
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .page {
+        width: calc(100% - 16px);
+        margin: 8px auto;
+        padding: 8px 10px 25px;
+    }
+
+
+    h1 {
+        margin-bottom: 25px;
+        font-size: 24px;
+    }
+
+
+    /* スマホでは縦並び */
+    .character,
+    .character.reverse {
+        flex-direction: column;
+        align-items: center;
+
+        margin-bottom: 45px;
+    }
+
+
+    /* 画像 */
+    .character-image {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+
+    .character-image img {
+        width: 80%;
+        max-width: 330px;
+        max-height: 350px;
+    }
+
+
+    /* 説明 */
+    .character-text {
+        width: 100%;
+        padding: 0 5px;
+    }
+
+
+    .character-text h2 {
+        font-size: 23px;
+    }
+
+
+    .character-text p {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+}
